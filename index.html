@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="aCart">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Shopping Cart Test</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.8/angular.js" data-semver="1.4.8"></script>
+    <script src="app.js"></script>
+    
+    
+  </head>
+
+  <body>
+    <form name="mainForm" ng-controller="mainForm" novalidate data-main-form ng-submit="SubmitForm()">
+    <p>Hello {{name}}!</p>
+    <p>Parent Billing : {{child.billing.fname}}</p>
+    <p>Parent Email: {{child.email.emailName}}</p>
+    <p>Parent Payment: {{child.payment.paymentName}}</p>
+    
+    <div ng-controller="emailCtrl" >
+      <div ng-form data-child-form>
+      Child : {{emailName}}
+      
+      <input name="field" type="text" placeholder="Field Name*" ng-model="email" required />
+      <input name="cityName" type="text" placeholder="City Name*" ng-model="city" required />
+      </div>
+    </div>
+    
+    <div ng-controller="billingCtrl" >
+      <div ng-form data-child-form>
+      Child : {{billingName}}
+      
+      <input name="field" type="text" placeholder="First Name*" ng-model="fname" required />
+          <input name="cityName" type="text" placeholder="Last Name*" ng-model="lname" required />
+          </div>
+    </div>
+    <div ng-controller="paymentCtrl" >
+      <div ng-form data-child-form>
+      Child : {{paymentName}}
+      
+      <input name="field" type="text" placeholder="Payment Type*" ng-model="ptype" required />
+          <input name="cityName" type="text" placeholder="Expiry*" ng-model="edate" required />
+          </div>
+    </div>
+    <button type="submit" submit-forms id="submintBtn" ng-disabled="mainForm.$invalid" >Submit</button>
+    </form>
+  </body>
+
+</html>
