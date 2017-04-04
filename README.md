@@ -1,4 +1,4 @@
-# Angular Implementation for AEM CMS
+# Angular POC for AEM CMS
 
 Base Angular Shoping cart application, this is a POC.
 Need to add Test & Target Code.
